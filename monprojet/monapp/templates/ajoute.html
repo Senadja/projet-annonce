@@ -68,7 +68,7 @@
 <div class="container">
     <h1>Mon Blog</h1>
     
-    <form id="articleForm", method="POST">
+    <form id="articleForm", method="POST" enctype="multipart/form-data">
     {% csrf_token %}
         <input type="text" id="title" placeholder="Titre de l'article"  name="title" required>
         <textarea id="content" placeholder="Contenu de l'article "name="content"  required></textarea>

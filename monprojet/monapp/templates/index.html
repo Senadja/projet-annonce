@@ -65,17 +65,24 @@
               <a class="nav-link" href="{% url 'ajoute' %}"> Ajoute</a>
               </li>
             </ul>
+            {% if user.is_authenticated %}
             <div class="user_option">
-              <a  href="{% url 'login' %}">  
+              <a href="{% url 'logout' %}">Déconnexion</a>
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+            {% else %}
+            <div class="user_option">
+              <a href="{% url 'login' %}">
                 <img src="{% static 'images/user.png' %}" alt="">
-                <span>
-                  auth 
-                </span>
+                <span>Connexion</span>
               </a>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
             </div>
+            {% endif %}
           </div>
           <div>
             <div class="custom_menu-btn ">

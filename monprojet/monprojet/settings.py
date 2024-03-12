@@ -63,6 +63,8 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Chemin vers les fichiers statiques
+MEDIA_URL = '/media/'
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
