@@ -37,6 +37,7 @@ class TestViews(TestCase):
         login_data = {'username': 'testuser', 'password': 'testpassword'}
         response = self.client.post(self.login_url, login_data)
         self.assertRedirects(response, reverse('index'))
+        self.assertEqual(response.status_code, 302)
 
     def test_add_annonce_authenticated(self):
         self.client.login(username='testuser', password='testpassword')
